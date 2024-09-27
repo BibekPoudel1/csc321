@@ -39,24 +39,25 @@ int main(){
 
 	//Boolean
 	bool b;
-	int i;
-	printf("Enter 1 for True and 0 for False: \n");
-	scanf("%d", &i);
-	if (i == 0){
-		b = false;
-	}else if (i == 1){
-		b = true;
-	}else{
-		printf("Invalid input. Please enter 0 or 1\n");
-	}
+    	int i;
+    	int result; // To check the return value of scanf
 
-	if (b){
-		printf("You entered true\n");
-	}else{
-		printf("You entered false\n");
-	}
+    	printf("Enter 1 for True and 0 for False: ");
+    	result = scanf("%d", &i); 
 
+    	if (result != 1) { // Check if scanf successfully read an integer
+        	printf("Invalid input. Please enter 0 or 1\n");
+    	} else if (i == 0) {
+        	b = false;
+    	} else if (i == 1) {
+        	b = true;
+    	} else {
+        	printf("Invalid input. Please enter 0 or 1\n");
+    	}
 
-		
-	
+   	if (b) {
+        	printf("You entered true\n");
+    	} else {
+        	printf("You entered false\n");
+    	}
 }
